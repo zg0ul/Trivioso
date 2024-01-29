@@ -42,6 +42,7 @@ dependencies:
   hooks_riverpod: ^2.4.9
   meta: ^1.9.1 # for dart annotations
   html_character_entities: ^1.0.0+1 # decode html entities
+  riverpod: ^2.4.9
 
 dev_dependencies:
   flutter_test:

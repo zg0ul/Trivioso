@@ -8,9 +8,6 @@ class QuizState extends Equatable {
   final List<Question> incorrect;
   final QuizStatus status;
 
-  bool get answered =>
-      status == QuizStatus.incorrect || status == QuizStatus.correct;
-
   const QuizState(
       {required this.selectedAnswer,
       required this.correct,
@@ -25,6 +22,9 @@ class QuizState extends Equatable {
       status: QuizStatus.initial,
     );
   }
+
+  bool get answered =>
+      status == QuizStatus.incorrect || status == QuizStatus.correct;
 
   @override
   List<Object> get props => [selectedAnswer, correct, incorrect, status,];
