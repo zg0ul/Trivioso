@@ -7,12 +7,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:trivioso/enums/difficulty.dart';
 import 'package:trivioso/models/failure_model.dart';
 import 'package:trivioso/models/question_model.dart';
+import 'package:trivioso/providers/providers.dart';
 import 'package:trivioso/repositories/quiz/base_quiz_repository.dart';
 
-final dioProvider = Provider<Dio>((ref) => Dio());
-
-final quizRepositoryProvider =
-    Provider<QuizRepository>((ref) => QuizRepository(ref));
 
 class QuizRepository extends BaseQuizRepository {
   final Ref _ref;

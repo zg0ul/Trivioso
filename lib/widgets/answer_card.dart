@@ -70,6 +70,7 @@ class AnswerCard extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(width: 12),
             // always show an empty circle if not displaying answer but change it to green check if answer is correct or rex x if answer is wrong
             CircularIcon(
               icon: isDisplayingAnswer

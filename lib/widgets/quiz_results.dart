@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:trivioso/controllers/quiz/quiz_controller.dart';
 import 'package:trivioso/controllers/quiz/quiz_state.dart';
 import 'package:trivioso/models/question_model.dart';
-import 'package:trivioso/repositories/quiz/quiz_repository.dart';
+import 'package:trivioso/providers/providers.dart';
 
 class QuizResults extends ConsumerWidget {
   final QuizState state;
@@ -36,7 +35,9 @@ class QuizResults extends ConsumerWidget {
         const SizedBox(height: 40),
         ElevatedButton(
           onPressed: () {
-            final _ = ref.refresh(quizRepositoryProvider);
+            ref.invalidate(quizRepositoryProvider);
+            ref.invalidate(quizTabStatusProvider);
+            ref.invalidate(currentIndexProvider);
             ref.read(quizControllerProvider.notifier).reset();
           },
           child: const Text('Play Again'),

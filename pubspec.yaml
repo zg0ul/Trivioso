@@ -44,6 +44,7 @@ dependencies:
   html_character_entities: ^1.0.0+1 # decode html entities
   riverpod: ^2.4.9
   google_fonts: ^6.1.0
+  loading_indicator: ^3.1.1
 
 dev_dependencies:
   flutter_test:
