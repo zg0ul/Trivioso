@@ -12,16 +12,17 @@ class QuizController extends StateNotifier<QuizState> {
     int currentIndex,
     WidgetRef ref,
   ) {
+    final numberOfQuestions = ref.read(numberOfQuestionsProvider);
     if (state.answered) return;
     if (currentQuestion.correctAnswer == answer) {
-      ref.read(quizTabStatusProvider.notifier).state[currentIndex] = true;
+      ref.read(quizTabStatusProvider(numberOfQuestions).notifier).state[currentIndex] = true;
       state = state.copyWith(
         selectedAnswer: answer,
         correct: [...state.correct, currentQuestion],
         status: QuizStatus.correct,
       );
     } else {
-      ref.read(quizTabStatusProvider.notifier).state[currentIndex] = false;
+      ref.read(quizTabStatusProvider(numberOfQuestions).notifier).state[currentIndex] = false;
       state = state.copyWith(
         selectedAnswer: answer,
         incorrect: [...state.incorrect, currentQuestion],

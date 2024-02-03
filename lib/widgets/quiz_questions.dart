@@ -19,7 +19,8 @@ class QuizQuestions extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final quizTabStatus = ref.watch(quizTabStatusProvider.notifier).state;
+    final numberOfQuestions = ref.read(numberOfQuestionsProvider);
+    final quizTabStatus = ref.watch(quizTabStatusProvider(numberOfQuestions));
     final currentIndex = ref.watch(currentIndexProvider);
 
     return PageView.builder(
@@ -134,7 +135,7 @@ class QuizQuestions extends ConsumerWidget {
                   ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 16, 20, 12),
+              padding: const EdgeInsets.fromLTRB(20, 18, 20, 20),
               child: Text(
                 HtmlCharacterEntities.decode(question.question),
                 style: GoogleFonts.barlow(

@@ -10,7 +10,6 @@ import 'package:trivioso/models/question_model.dart';
 import 'package:trivioso/providers/providers.dart';
 import 'package:trivioso/repositories/quiz/base_quiz_repository.dart';
 
-
 class QuizRepository extends BaseQuizRepository {
   final Ref _ref;
 
@@ -36,9 +35,9 @@ class QuizRepository extends BaseQuizRepository {
       }
 
       final response = await _ref.read(dioProvider).get(
-        'https://opentdb.com/api.php',
-        queryParameters: queryParameters,
-      );
+            'https://opentdb.com/api.php',
+            queryParameters: queryParameters,
+          );
 
       if (response.statusCode == 200) {
         final data = Map<String, dynamic>.from(response.data);
