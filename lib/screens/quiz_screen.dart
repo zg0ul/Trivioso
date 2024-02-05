@@ -10,7 +10,7 @@ import 'package:trivioso/widgets/buttons/advancing_button.dart';
 import 'package:trivioso/widgets/buttons/quit_button.dart';
 import 'package:trivioso/widgets/quiz_error.dart';
 import 'package:trivioso/widgets/quiz_questions.dart';
-import 'package:trivioso/widgets/quiz_results.dart';
+import 'package:trivioso/screens/quiz_results_screen.dart';
 import 'package:tuple/tuple.dart';
 
 class QuizScreen extends HookConsumerWidget {
@@ -123,7 +123,7 @@ class QuizScreen extends HookConsumerWidget {
     // returns the state by default
     final quizState = ref.watch(quizControllerProvider);
     return quizState.status == QuizStatus.complete
-        ? QuizResults(state: quizState, questions: questions)
+        ? QuizResultsScreen(quizState: quizState, quizQuestions: questions)
         : QuizQuestions(
             questions: questions,
             pageController: pageController,

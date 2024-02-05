@@ -31,27 +31,28 @@ class AdvancingButton extends ConsumerWidget {
               .read(quizControllerProvider.notifier)
               .nextQuestion(questions, currentPageNumber);
           if (currentPageNumber + 1 < questions.length) {
+            // control the page transition
             pageController.nextPage(
+              // if duration is 0 then the page will not transition
               duration: const Duration(milliseconds: 100),
-              curve: Curves.easeOut,
+              curve: Curves.linear,
             );
 
             ref.read(currentIndexProvider.notifier).state++;
           } else if (quizState.status == QuizStatus.complete) {
-            ref.read(currentIndexProvider.notifier).state = 0;
+            ref.invalidate(currentIndexProvider);
           }
         }
       },
       child: Container(
         height: 50,
-        // width: MediaQuery.of(context).size.width / 2,
         decoration: BoxDecoration(
           color: quizState.answered ? Colors.cyan.shade400 : Colors.grey,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Center(
           child: Text(
-            currentPageNumber + 1 < questions.length ? 'Next' : 'Finish',
+            ref.read(currentIndexProvider) + 1 < questions.length ? 'Next' : 'Finish',
             style: GoogleFonts.barlow(
               color: Colors.white,
               fontSize: 20,

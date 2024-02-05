@@ -106,32 +106,6 @@ class QuizQuestions extends ConsumerWidget {
                       ),
                     );
                   }).toList()
-                  // children: List.generate(
-                  //   quizTabStatus.length,
-                  //   (index) => Expanded(
-                  //     child: Container(
-                  //       margin: const EdgeInsets.all(5),
-                  //       width: 20,
-                  //       height: 3,
-                  //       decoration: BoxDecoration(
-                  //         color: currentIndex == index
-                  //             ? Colors.white
-                  //             : ref
-                  //                         .watch(quizTabStatusProvider.notifier)
-                  //                         .state[index] ==
-                  //                     true
-                  //                 ? Colors.green
-                  //                 : ref
-                  //                             .watch(
-                  //                                 quizTabStatusProvider.notifier)
-                  //                             .state[index] ==
-                  //                         false
-                  //                     ? Colors.red
-                  //                     : Colors.grey,
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
                   ),
             ),
             Padding(

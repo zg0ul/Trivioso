@@ -15,7 +15,7 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final categories = ref.watch(categoryProvider);
+    final categories = ref.watch(quizCategoryProvider);
 
     return Container(
       height: MediaQuery.of(context).size.height,

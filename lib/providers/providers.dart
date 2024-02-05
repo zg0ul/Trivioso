@@ -39,11 +39,12 @@ final quizQuestionProvider = FutureProvider.autoDispose
       );
 });
 
-final categoryProvider = FutureProvider.autoDispose<List<Category>>((ref) {
+final quizCategoryProvider = FutureProvider.autoDispose<List<Category>>((ref) {
   return ref.watch(categoryRepositoryProvider).getCategories();
 });
 
-final quizTabStatusProvider = StateProvider.family<List<bool?>, int>((ref, numberOfQuestions) {
+final quizTabStatusProvider =
+    StateProvider.family<List<bool?>, int>((ref, numberOfQuestions) {
   return List.generate(numberOfQuestions, (index) => null);
 });
 
@@ -70,7 +71,8 @@ final shouldShowDifficultySelectionErrorProvider = StateProvider<bool>((ref) {
 // router provider
 final routerProvider = Provider<GoRouter>((ref) => router);
 
-final questionNumberControllerProvider = StateProvider<TextEditingController>((ref) {
+final questionNumberControllerProvider =
+    StateProvider<TextEditingController>((ref) {
   return TextEditingController(
     text: ref.watch(numberOfQuestionsProvider).toString(),
   );

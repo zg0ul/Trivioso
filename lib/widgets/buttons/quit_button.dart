@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:trivioso/providers/providers.dart';
 
-class QuitButton extends StatelessWidget {
+class QuitButton extends ConsumerWidget {
   const QuitButton({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
       onTap: () {
+        ref.invalidate(currentIndexProvider);
         context.go('/');
       },
       child: SizedBox(
