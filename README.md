@@ -1,16 +1,51 @@
-# trivioso
+# Trivioso
 
-A new Flutter project.
+**Trivioso** is a quiz app developed using **Flutter** and **Riverpod**. It allows users to engage in quizzes and test their knowledge on various topics.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Quiz Categories**: Choose from a variety of quiz categories.
+- **Random Questions**: Get random questions for each quiz.
 
-A few resources to get you started if this is your first Flutter project:
+## Installation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Make sure you have **Flutter** installed. If not, follow the official installation guide.
+2. Clone this repository:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    ```
+    git clone https://github.com/zg0ul/Trivioso.git
+    ```
+
+3. Navigate to the project directory:
+
+    ```
+    cd Trivioso
+    ```
+
+4. Install dependencies:
+
+    ```
+    flutter pub get
+    ```
+
+5. Run the app:
+
+    ```
+    flutter run
+    ```
+
+## Preview
+https://youtu.be/Hd2tkZ4fn0M
+
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to **Trivioso**, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and submit a pull request.
+
+## License
+
+This project is licensed under the **MIT License** - see the LICENSE file for details.
